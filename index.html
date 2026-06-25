@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ted's Woodworking - 16,000+ Step-by-Step Plans</title>
+    <style>
+        :root {
+            --primary-color: #1b4d3e; /* Deep elegant green matching premium landing page templates */
+            --accent-orange: #e67e22; /* Warm bright orange for critical high-converting CTAs */
+            --accent-orange-hover: #d35400;
+            --text-main: #2c3e50;
+            --text-muted: #7f8c8d;
+            --bg-light: #f4f7f6;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #ffffff;
+        }
+
+        /* Premium Floating Top Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-btn {
+            background-color: var(--primary-color);
+            color: white !important;
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-weight: 600 !important;
+        }
+
+        /* Premium Split-Hero Workspace Layout Section */
+        .hero-container {
+            display: flex;
+            align-items: center;
+            min-height: calc(100vh - 80px);
+            background: linear-gradient(135deg, #ffffff 55%, var(--bg-light) 55%);
+            padding: 40px 5%;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            color: #1a252f;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .cta-btn-main {
+            display: inline-block;
+            background-color: var(--accent-orange);
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 16px 36px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .cta-btn-main:hover {
+            background-color: var(--accent-orange-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* 3-Column Core Value Features Section */
+        .features-section {
+            padding: 60px 5%;
+            background-color: #ffffff;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: -100px; /* Overlaps transition zone flawlessly */
+            position: relative;
+            z-index: 10;
+        }
+
+        .card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: #1a252f;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Clean Project Highlights Panel Grid */
+        .highlights-section {
+            padding: 80px 5%;
+            background-color: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: #1a252f;
+            margin-bottom: 10px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item .item-title {
+            padding: 20px 15px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-align: center;
+            background: #fff;
+        }
+
+        /* Banner Conversion Frame */
+        .banner-cta {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 60px 5%;
+            margin: 40px 0;
+            border-radius: 12px;
+        }
+
+        .banner-cta h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .banner-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Professional Landing Page Footer layout */
+        footer {
+            background-color: #1a252f;
+            color: white;
+            padding: 60px 5% 30px;
+            font-size: 0.95rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-orange);
+        }
+
+        .footer-col p, .footer-col ul {
+            color: #bdc3c7;
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            color: #7f8c8d;
+        }
+
+        /* Fully Responsive System Optimization */
+        @media (max-width: 992px) {
+            .hero-container { flex-direction: column; text-align: center; padding-top: 60px; }
+            .cards-grid { grid-template-columns: 1fr; margin-top: 20px; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation System Bar -->
+    <nav class="navbar">
+        <a href="https://hop.clickbank.net/?affiliate=juneonly&vendor=tedsplans" class="logo">🔨 Ted's Woodworking</a>
+        <ul class="nav-links">
+            <li><a href="https://hop.clickbank.net/?affiliate=juneonly&vendor=tedsplans">Plans</a></li>
+            <li><a href="https://hop.clickbank.net/?affiliate=juneonly&vendor=tedsplans">Projects</a></li>
+            <li><a href="https://hop.clickbank.net/?affiliate=juneonly&vendor=tedsplans">Reviews</a></li>
+            <li><a href="https://hop.clickbank.net/?affiliate=juneonly&vendor=tedsplans" class="nav-btn">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Split Conversion Section -->
+    <section class="hero-container">
+        <div class="hero-text">
+            <h1>Build 16,000+ Woodworking Projects with Easy, Step-by-Step Plans.</h1>
+            <p>No Prior Experience Needed. The Ultimate Guide for Beginners and Masters Alike to Build Custom Furniture, Sheds, and More flawlessly.</p>
+            <a href="https://hop.clickbank.net/?affiliate=juneonly&vendor=tedsplans" class="cta-btn-main">Get Instant Access Now →</a>
+        </div>
+        <div class="hero-image">
+            <!-- Updated live-loading image link -->
+            <img src="https://www.woodworkdetails.com/wp-content/uploads/2021/08/woodworking.jpg" alt="Woodworking Workspace Blueprint Layout">
+        </div>
+    </section>
+
+    <!-- Value Proposition Features Row Segment -->
+    <section class="features-section">
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🪵</div>
+                <h3>1. Massive Variety</h3>
+                <p>Instant access to over 16,000 downloadable blueprints spanning across 100+ categories ranging from tiny weekend craft builds to huge outdoor garden structures.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📐</div>
+                <h3>2. Precise Instructions</h3>
+                <p>Never miscalculate a cut again. Every layout provides 3D modular diagrams, step-by-step assembly workflows, and precise material dimensions.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🛒</div>
+                <h3>3. Complete Materials List</h3>
+                <p>Save massive retail costs at lumberyards by knowing exactly how much timber, specific fastners, and finish layers to buy upfront.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Galleries Display Panel Blocks -->
+    <section class="highlights-section">
+        <div class="section-header">
+            <h2>Project Architecture Categories</h2>
+            <p>Unlock easy-to-follow blueprints across hundreds of diverse carpentry classes instantly</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="item-title">🏡 Advanced Shed Plans</div>
+            </div>
+            <div class="gallery-item">
+                <div class="item-title">🪑 Premium Home Furniture</div>
+            </div>
+            <div class="gallery-item">
+                <div class="item-title">🪵 Heavy Outdoor Tables</div>
+            </div>
+            <div class="gallery-item">
+                <div class="item-title">🗄️ Master Indoor Cabinets</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mid-Page Call-To-Action Element Container -->
+    <div style="padding: 0 5%;">
+        <section class="banner-cta">
+            <h2>Join 10,000+ Happy Woodworkers Today</h2>
+            <p>Stop wasting precious material and spending countless hours looking for flawed internet diagrams.</p>
+            <a href="https://hop.clickbank.net/?affiliate=juneonly&vendor=tedsplans" class="cta-btn-main" style="box-shadow: none; background-color: #ffffff; color: var(--primary-color);">Claim Your 16,000 Plans Portal Today</a>
+        </section>
+    </div>
+
+    <!-- Compliant Marketing Platform Footer Section -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>About Us</h4>
+                <p>Helping modern hobbyists, woodworkers, and DIY enthusiasts achieve clean structural mastery without excessive studio setups or machinery bills.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Resource Info</h4>
+                <ul>
+                    <li><a href="https://hop.clickbank.net/?affiliate=juneonly&vendor=tedsplans" style="color:#bdc3c7; text-decoration:none;">Privacy Frameworks</a></li>
+                    <li><a href="https://hop.clickbank.net/?affiliate=juneonly&vendor=tedsplans" style="color:#bdc3c7; text-decoration:none;">Terms of Service</a></li>
+                    <li><a href="https://hop.clickbank.net/?affiliate=juneonly&vendor=tedsplans" style="color:#bdc3c7; text-decoration:none;">Support System</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Affiliate Disclosure</h4>
+                <p>This page features high-grade digital product referral pathways. Clicking these assets may earn the page operators performance commission incentives.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Ted's Woodworking Hub. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
